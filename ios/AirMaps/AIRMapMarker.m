@@ -209,12 +209,15 @@
         _reloadImageCancellationBlock();
         _reloadImageCancellationBlock = nil;
     }
-    _reloadImageCancellationBlock = [_bridge.imageLoader loadImageWithURLRequest:[RCTConvert NSURLRequest:_imageSrc]
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:imageSrc]];
+    _reloadImageCancellationBlock = [_bridge.imageLoader loadImageWithURLRequest:request
                                                                             size:self.bounds.size
                                                                            scale:RCTScreenScale()
                                                                          clipped:YES
                                                                       resizeMode:UIViewContentModeCenter
                                                                    progressBlock:nil
+                                                                partialLoadBlock:nil
                                                                  completionBlock:^(NSError *error, UIImage *image) {
                                                                      if (error) {
                                                                          // TODO(lmr): do something with the error?
