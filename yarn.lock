@@ -1828,6 +1828,11 @@
   resolved "https://registry.yarnpkg.com/@react-native/polyfills/-/polyfills-2.0.0.tgz#4c40b74655c83982c8cf47530ee7dc13d957b6aa"
   integrity sha512-K0aGNn1TjalKj+65D7ycc1//H9roAQ51GJVk5ZJQFb2teECGmzd86bYDC0aYdbRf7gtovescq4Zt6FR0tgXiHQ==
 
+"@rnx-kit/react-native-host@^0.2.5":
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/@rnx-kit/react-native-host/-/react-native-host-0.2.5.tgz#fd612628cbfd6dae3658703db97bdb3c264f9364"
+  integrity sha512-duURds7jZjWQq4r4wmzBQ/7d2drpGov68hbQv+m3Cv4Zl3duVE/HtJCTsLiGcCZQnvDMjtKinm/xQ0E87hjcvQ==
+
 "@semantic-release/changelog@6.0.3":
   version "6.0.3"
   resolved "https://registry.yarnpkg.com/@semantic-release/changelog/-/changelog-6.0.3.tgz#6195630ecbeccad174461de727d5f975abc23eeb"
@@ -2349,7 +2354,7 @@ ajv@^6.10.0, ajv@^6.12.4:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-ajv@^8.11.0, ajv@^8.6.3:
+ajv@^8.0.0, ajv@^8.11.0, ajv@^8.6.3:
   version "8.12.0"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-8.12.0.tgz#d1a0527323e22f53562c567c00991577dfbe19d1"
   integrity sha512-sRu1kpcO9yLtYxBKvqfTeh9KzZEwO3STyX1HT+4CaDzC6HpTGYhIhPIzj9XuKU7KYDwnaeh5hcOwjy1QuJzBPA==
@@ -3157,7 +3162,7 @@ cliui@^7.0.2:
     strip-ansi "^6.0.0"
     wrap-ansi "^7.0.0"
 
-cliui@^8.0.1:
+cliui@^8.0.0, cliui@^8.0.1:
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/cliui/-/cliui-8.0.1.tgz#0c04b075db02cbfe60dc8e6cf2f5486b1a3608aa"
   integrity sha512-BSeNnyus75C4//NQ9gQt1/csTXyo/8Sb+afLAkzAptFuMsod9HFokGNudZpi/oQV73hnVK+sR+5PVRMd+Dr7YQ==
@@ -4250,6 +4255,13 @@ fast-levenshtein@^2.0.6:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
   integrity sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw==
+
+fast-xml-parser@^4.0.0:
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/fast-xml-parser/-/fast-xml-parser-4.2.2.tgz#cb7310d1e9cf42d22c687b0fae41f3c926629368"
+  integrity sha512-DLzIPtQqmvmdq3VUKR7T6omPK/VCRNqgFlGtbESfyhcH2R4I8EzK1/K6E8PkRCK2EabWrUHK32NjYRbEFnnz0Q==
+  dependencies:
+    strnum "^1.0.5"
 
 fastest-levenshtein@^1.0.16:
   version "1.0.16"
@@ -6963,7 +6975,7 @@ minimist-options@4.1.0:
     is-plain-obj "^1.1.0"
     kind-of "^6.0.3"
 
-minimist@^1.2.0, minimist@^1.2.5, minimist@^1.2.6:
+minimist@^1.2.0, minimist@^1.2.5, minimist@^1.2.6, minimist@^1.2.8:
   version "1.2.8"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.8.tgz#c1a464e7693302e082a075cee0c057741ac4772c"
   integrity sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==
@@ -8206,6 +8218,21 @@ react-native-gradle-plugin@^0.70.3:
   resolved "https://registry.yarnpkg.com/react-native-gradle-plugin/-/react-native-gradle-plugin-0.70.3.tgz#cbcf0619cbfbddaa9128701aa2d7b4145f9c4fc8"
   integrity sha512-oOanj84fJEXUg9FoEAQomA8ISG+DVIrTZ3qF7m69VQUJyOGYyDZmPqKcjvRku4KXlEH6hWO9i4ACLzNBh8gC0A==
 
+react-native-test-app@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/react-native-test-app/-/react-native-test-app-2.5.1.tgz#deb35604c5eff2662494dc221cb91a269529658b"
+  integrity sha512-vtJ8w2M7NmBu22yUSIuu+ut++GrWDyL3fKnaGvKQ8tUlwaRhglPakrIfDd+nnhTF4QZdEbYlE2fKp/V6Zh9Qdg==
+  dependencies:
+    "@rnx-kit/react-native-host" "^0.2.5"
+    ajv "^8.0.0"
+    chalk "^4.1.0"
+    cliui "^8.0.0"
+    fast-xml-parser "^4.0.0"
+    minimist "^1.2.8"
+    prompts "^2.4.0"
+    semver "^7.3.5"
+    uuid "^8.3.2"
+
 react-native@0.70.8:
   version "0.70.8"
   resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.70.8.tgz#aa9aae8e6291589908db74fe69e0ec1d9a9c5490"
@@ -9249,6 +9276,11 @@ strip-json-comments@~2.0.1:
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
   integrity sha512-4gB8na07fecVVkOI6Rs4e7T6NOTki5EmL7TUduTs6bu3EdnSycntVJ4re8kgZA+wx9IueI2Y11bfbgwtzuE0KQ==
 
+strnum@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/strnum/-/strnum-1.0.5.tgz#5c4e829fe15ad4ff0d20c3db5ac97b73c9b072db"
+  integrity sha512-J8bbNyKKXl5qYcR36TIO8W3mVGVHrmmxsd5PAItGkmyzwJvybiw2IVq5nqd0i4LSNSkB/sx9VHllbfFdr9k1JA==
+
 sudo-prompt@^9.0.0:
   version "9.2.1"
   resolved "https://registry.yarnpkg.com/sudo-prompt/-/sudo-prompt-9.2.1.tgz#77efb84309c9ca489527a4e749f287e6bdd52afd"
@@ -9769,6 +9801,11 @@ uuid@^3.0.1:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
+
+uuid@^8.3.2:
+  version "8.3.2"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
+  integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
 
 v8-compile-cache-lib@^3.0.1:
   version "3.0.1"

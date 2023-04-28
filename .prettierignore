@@ -5,3 +5,7 @@ example/ios
 example/android
 android/build
 example/vendor/bundle/
+example-prev/
+example/.watchmanconfig
+windows/ReactNativeMaps/**/*.json
+lib/

@@ -50,3 +50,12 @@ lib/
 example/vendor/bundle/
 
 example/ios/Config.xcconfig
+
+*.binlog
+
+windows/.vs
+windows/ReactNativeMaps/ARM64
+windows/ReactNativeMaps/Generated*
+windows/ReactNativeMaps/obj/
+windows/ReactNativeMaps/x64
+windows/x64
