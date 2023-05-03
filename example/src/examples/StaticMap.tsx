@@ -1,5 +1,13 @@
 import React from 'react';
-import {StyleSheet, View, Text, Dimensions, ScrollView} from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Text,
+  Dimensions,
+  ScrollView,
+  NativeModules,
+  UIManager,
+} from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
 
 const {width, height} = Dimensions.get('window');
@@ -9,7 +17,7 @@ const LATITUDE = 37.78825;
 const LONGITUDE = -122.4324;
 const LATITUDE_DELTA = 0.0922;
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
-
+console.log({NativeModules, UIManager});
 class StaticMap extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
@@ -46,11 +54,11 @@ class StaticMap extends React.Component<any, any> {
             pitchEnabled={false}
             rotateEnabled={false}
             initialRegion={this.state.region}>
-            <Marker
+            {/* <Marker
               title="This is a title"
               description="This is a description"
               coordinate={this.state.region}
-            />
+            /> */}
           </MapView>
           <Text>parent</Text>
           <Text>ScrollView</Text>

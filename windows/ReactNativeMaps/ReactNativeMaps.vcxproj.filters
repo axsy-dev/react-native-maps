@@ -7,10 +7,12 @@
     <ClCompile Include="pch.cpp" />
     <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
     <ClCompile Include="ReactPackageProvider.cpp" />
+    <ClCompile Include="AIRMapViewManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
     <ClInclude Include="ReactPackageProvider.h" />
+    <ClInclude Include="AIRMapViewManager.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="PropertySheet.props" />

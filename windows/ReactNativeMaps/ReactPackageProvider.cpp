@@ -4,7 +4,7 @@
 #include "ReactPackageProvider.g.cpp"
 #endif
 
-#include "ReactNativeModule.h"
+#include "AIRMapViewManager.h"
 
 using namespace winrt::Microsoft::ReactNative;
 
@@ -12,7 +12,8 @@ namespace winrt::ReactNativeMaps::implementation
 {
     void ReactPackageProvider::CreatePackage(IReactPackageBuilder const &packageBuilder) noexcept
     {
-        AddAttributedModules(packageBuilder);
+        packageBuilder.AddViewManager(L"AIRMapViewManager", []()
+                                      { return winrt::make<AIRMapViewManager>(); });
     }
 
 } // namespace winrt::ReactNativeMaps::implementation

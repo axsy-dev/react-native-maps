@@ -16,6 +16,8 @@ namespace winrt::ReactNativeMaps::implementation
 namespace winrt::ReactNativeMaps::factory_implementation
 {
 
-struct ReactPackageProvider : ReactPackageProviderT<ReactPackageProvider, implementation::ReactPackageProvider> {};
+    struct ReactPackageProvider : ReactPackageProviderT<ReactPackageProvider, implementation::ReactPackageProvider>
+    {
+    };
 
 } // namespace winrt::ReactNativeMaps::factory_implementation
