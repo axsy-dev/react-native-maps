@@ -140,7 +140,7 @@ export default class App extends React.Component<any, any> {
       [
         // [<component>, <component description>, <Google compatible>, <Google add'l description>]
         [StaticMap, 'StaticMap', true],
-        [ThemeMap, 'ThemeMap', true],
+        /*  [ThemeMap, 'ThemeMap', true],
         [DisplayLatLng, 'Tracking Position', true, '(incomplete)'],
         [ViewsAsMarkers, 'Arbitrary Views as Markers', true],
         [EventListener, 'Events', true, '(incomplete)'],
@@ -182,13 +182,13 @@ export default class App extends React.Component<any, any> {
         [MassiveCustomMarkers, 'MassiveCustomMarkers', true],
         [GeojsonMap, 'Geojson', true],
         [CacheURLTiles, 'CacheURLTiles', true],
-        [CacheWMSTiles, 'CacheWMSTiles', true],
+        [CacheWMSTiles, 'CacheWMSTiles', true],*/
       ]
         // Filter out examples that are not yet supported for Google Maps on iOS.
-        .filter(
-          example =>
-            ANDROID || (IOS && (example[2] || !this.state.useGoogleMaps)),
-        )
+        // .filter(
+        //   example =>
+        //     ANDROID || (IOS && (example[2] || !this.state.useGoogleMaps)),
+        // )
         .map(makeExampleMapper(IOS && this.state.useGoogleMaps)),
     );
   }
