@@ -1,6 +1,11 @@
 #include "pch.h"
 #include "AIRMapViewManager.h"
+#include "JSValueReader.h"
+#include "JSValueXaml.h"
+#include "NativeModules.h"
 
+using namespace winrt;
+using namespace Microsoft::ReactNative;
 using namespace winrt::Windows::UI::Xaml::Controls;
 
 namespace winrt::ReactNativeMaps
@@ -13,7 +18,13 @@ namespace winrt::ReactNativeMaps
 
     xaml::FrameworkElement AIRMapViewManager::CreateView() noexcept
     {
-        return Maps::MapControl();
+        auto const &view = Maps::MapControl();
+
+        // view.ZoomLevel(12);
+        // view.Style(Maps::MapStyle::Road);
+        // view.MapProjection(Maps::MapProjection::WebMercator);
+
+        return view;
     }
 
     // IViewManagerWithChildren
@@ -21,27 +32,27 @@ namespace winrt::ReactNativeMaps
                                     xaml::UIElement const &child,
                                     int64_t index) noexcept
     {
-        if (auto const &panel = parent.try_as<Maps::MapControl>())
+        if (auto const &mapView = parent.try_as<Maps::MapControl>())
         {
-            panel.Children().InsertAt(static_cast<uint32_t>(index), child);
+            mapView.Children().InsertAt(static_cast<uint32_t>(index), child);
         }
     }
 
     void AIRMapViewManager::RemoveAllChildren(
         xaml::FrameworkElement const &parent) noexcept
     {
-        if (auto const &panel = parent.try_as<Maps::MapControl>())
+        if (auto const &mapView = parent.try_as<Maps::MapControl>())
         {
-            panel.Children().Clear();
+            mapView.Children().Clear();
         }
     }
 
     void AIRMapViewManager::RemoveChildAt(xaml::FrameworkElement const &parent,
                                           int64_t index) noexcept
     {
-        if (auto const &panel = parent.try_as<Maps::MapControl>())
+        if (auto const &mapView = parent.try_as<Maps::MapControl>())
         {
-            panel.Children().RemoveAt(static_cast<uint32_t>(index));
+            mapView.Children().RemoveAt(static_cast<uint32_t>(index));
         }
     }
 
@@ -49,24 +60,24 @@ namespace winrt::ReactNativeMaps
                                          xaml::UIElement const &oldChild,
                                          xaml::UIElement const &newChild) noexcept
     {
-        if (auto const &panel = parent.try_as<Maps::MapControl>())
+        if (auto const &mapView = parent.try_as<Maps::MapControl>())
         {
             uint32_t index;
-            if (panel.Children().IndexOf(oldChild, index))
+            if (mapView.Children().IndexOf(oldChild, index))
             {
-                panel.Children().RemoveAt(index);
-                panel.Children().InsertAt(index, newChild);
+                mapView.Children().RemoveAt(index);
+                mapView.Children().InsertAt(index, newChild);
             }
         }
     }
 
     // IViewManagerWithReactContext
-    React::IReactContext AIRMapViewManager::ReactContext() noexcept
+    IReactContext AIRMapViewManager::ReactContext() noexcept
     {
-        return m_reactContext.Handle();
+        return m_reactContext;
     }
 
-    void AIRMapViewManager::ReactContext(React::IReactContext reactContext) noexcept
+    void AIRMapViewManager::ReactContext(IReactContext reactContext) noexcept
     {
         m_reactContext = reactContext;
     }
@@ -75,7 +86,6 @@ namespace winrt::ReactNativeMaps
     Collections::IMapView<winrt::hstring, React::ViewManagerPropertyType> AIRMapViewManager::NativeProps() noexcept
     {
         auto nativeProps = winrt::single_threaded_map<winrt::hstring, React::ViewManagerPropertyType>();
-        nativeProps.Insert(L"customMapStyleString", React::ViewManagerPropertyType::String);
         return nativeProps.GetView();
     }
 

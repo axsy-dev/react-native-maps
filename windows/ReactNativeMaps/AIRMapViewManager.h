@@ -28,15 +28,15 @@ namespace winrt::ReactNativeMaps
                       xaml::UIElement const &newChild) noexcept;
 
     // IViewManagerWithReactContext
-    React::IReactContext ReactContext() noexcept;
-    void ReactContext(React::IReactContext reactContext) noexcept;
+    winrt::Microsoft::ReactNative::IReactContext ReactContext() noexcept;
+    void ReactContext(winrt::Microsoft::ReactNative::IReactContext reactContext) noexcept;
 
     // IViewManagerWithNativeProperties
     Collections::IMapView<winrt::hstring, React::ViewManagerPropertyType> NativeProps() noexcept;
     void UpdateProperties(xaml::FrameworkElement const &view, React::IJSValueReader const &propertyMapReader) noexcept;
 
   private:
-    winrt::Microsoft::ReactNative::ReactContext m_reactContext{nullptr};
+    winrt::Microsoft::ReactNative::IReactContext m_reactContext{nullptr};
   };
 
 } // namespace winrt::ReactNativeMaps

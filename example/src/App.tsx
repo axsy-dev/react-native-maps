@@ -9,50 +9,50 @@ import {
   Switch,
 } from 'react-native';
 import {PROVIDER_GOOGLE, PROVIDER_DEFAULT} from 'react-native-maps';
-import DisplayLatLng from './examples/DisplayLatLng';
-import ViewsAsMarkers from './examples/ViewsAsMarkers';
-import EventListener from './examples/EventListener';
-import MarkerTypes from './examples/MarkerTypes';
-import DraggableMarkers from './examples/DraggableMarkers';
-import PolygonCreator from './examples/PolygonCreator';
-import PolylineCreator from './examples/PolylineCreator';
-import GradientPolylines from './examples/GradientPolylines';
-import AnimatedViews from './examples/AnimatedViews';
-import AnimatedMarkers from './examples/AnimatedMarkers';
-import Callouts from './examples/Callouts';
-import Overlays from './examples/Overlays';
-import DefaultMarkers from './examples/DefaultMarkers';
-import CustomMarkers from './examples/CustomMarkers';
-import CachedMap from './examples/CachedMap';
-import LoadingMap from './examples/LoadingMap';
-import MapBoundaries from './examples/MapBoundaries';
-import TakeSnapshot from './examples/TakeSnapshot';
-import FitToSuppliedMarkers from './examples/FitToSuppliedMarkers';
-import FitToCoordinates from './examples/FitToCoordinates';
-import LiteMapView from './examples/LiteMapView';
-import CustomTiles from './examples/CustomTiles';
-import WMSTiles from './examples/WMSTiles';
-import ZIndexMarkers from './examples/ZIndexMarkers';
+// import DisplayLatLng from './examples/DisplayLatLng';
+// import ViewsAsMarkers from './examples/ViewsAsMarkers';
+// import EventListener from './examples/EventListener';
+// import MarkerTypes from './examples/MarkerTypes';
+// import DraggableMarkers from './examples/DraggableMarkers';
+// import PolygonCreator from './examples/PolygonCreator';
+// import PolylineCreator from './examples/PolylineCreator';
+// import GradientPolylines from './examples/GradientPolylines';
+// import AnimatedViews from './examples/AnimatedViews';
+// import AnimatedMarkers from './examples/AnimatedMarkers';
+// import Callouts from './examples/Callouts';
+// import Overlays from './examples/Overlays';
+// import DefaultMarkers from './examples/DefaultMarkers';
+// import CustomMarkers from './examples/CustomMarkers';
+// import CachedMap from './examples/CachedMap';
+// import LoadingMap from './examples/LoadingMap';
+// import MapBoundaries from './examples/MapBoundaries';
+// import TakeSnapshot from './examples/TakeSnapshot';
+// import FitToSuppliedMarkers from './examples/FitToSuppliedMarkers';
+// import FitToCoordinates from './examples/FitToCoordinates';
+// import LiteMapView from './examples/LiteMapView';
+// import CustomTiles from './examples/CustomTiles';
+// import WMSTiles from './examples/WMSTiles';
+// import ZIndexMarkers from './examples/ZIndexMarkers';
 import StaticMap from './examples/StaticMap';
-import ThemeMap from './examples/ThemeMap';
-import MapStyle from './examples/MapStyle';
-import LegalLabel from './examples/LegalLabel';
-import SetNativePropsOverlays from './examples/SetNativePropsOverlays';
-import CustomOverlay from './examples/CustomOverlay';
-import MapKml from './examples/MapKml';
-import BugMarkerWontUpdate from './examples/BugMarkerWontUpdate';
-import ImageOverlayWithAssets from './examples/ImageOverlayWithAssets';
-import ImageOverlayWithURL from './examples/ImageOverlayWithURL';
-import ImageOverlayWithBearing from './examples/ImageOverlayWithBearing';
-import AnimatedNavigation from './examples/AnimatedNavigation';
-import OnPoiClick from './examples/OnPoiClick';
-import TestIdMarkers from './examples/TestIdMarkers';
-import IndoorMap from './examples/IndoorMap';
-import CameraControl from './examples/CameraControl';
-import MassiveCustomMarkers from './examples/MassiveCustomMarkers';
-import GeojsonMap from './examples/Geojson';
-import CacheURLTiles from './examples/CacheURLTiles';
-import CacheWMSTiles from './examples/CacheWMSTiles';
+// import ThemeMap from './examples/ThemeMap';
+// import MapStyle from './examples/MapStyle';
+// import LegalLabel from './examples/LegalLabel';
+// import SetNativePropsOverlays from './examples/SetNativePropsOverlays';
+// import CustomOverlay from './examples/CustomOverlay';
+// import MapKml from './examples/MapKml';
+// import BugMarkerWontUpdate from './examples/BugMarkerWontUpdate';
+// import ImageOverlayWithAssets from './examples/ImageOverlayWithAssets';
+// import ImageOverlayWithURL from './examples/ImageOverlayWithURL';
+// import ImageOverlayWithBearing from './examples/ImageOverlayWithBearing';
+// import AnimatedNavigation from './examples/AnimatedNavigation';
+// import OnPoiClick from './examples/OnPoiClick';
+// import TestIdMarkers from './examples/TestIdMarkers';
+// import IndoorMap from './examples/IndoorMap';
+// import CameraControl from './examples/CameraControl';
+// import MassiveCustomMarkers from './examples/MassiveCustomMarkers';
+// import GeojsonMap from './examples/Geojson';
+// import CacheURLTiles from './examples/CacheURLTiles';
+// import CacheWMSTiles from './examples/CacheWMSTiles';
 
 const IOS = Platform.OS === 'ios';
 const ANDROID = Platform.OS === 'android';
@@ -136,11 +136,12 @@ export default class App extends React.Component<any, any> {
   }
 
   render() {
-    return this.renderExamples(
+    return <StaticMap provider={undefined} />;
+    /*return this.renderExamples(
       [
         // [<component>, <component description>, <Google compatible>, <Google add'l description>]
         [StaticMap, 'StaticMap', true],
-        /*  [ThemeMap, 'ThemeMap', true],
+         [ThemeMap, 'ThemeMap', true],
         [DisplayLatLng, 'Tracking Position', true, '(incomplete)'],
         [ViewsAsMarkers, 'Arbitrary Views as Markers', true],
         [EventListener, 'Events', true, '(incomplete)'],
@@ -182,7 +183,7 @@ export default class App extends React.Component<any, any> {
         [MassiveCustomMarkers, 'MassiveCustomMarkers', true],
         [GeojsonMap, 'Geojson', true],
         [CacheURLTiles, 'CacheURLTiles', true],
-        [CacheWMSTiles, 'CacheWMSTiles', true],*/
+        [CacheWMSTiles, 'CacheWMSTiles', true],
       ]
         // Filter out examples that are not yet supported for Google Maps on iOS.
         // .filter(
@@ -190,7 +191,7 @@ export default class App extends React.Component<any, any> {
         //     ANDROID || (IOS && (example[2] || !this.state.useGoogleMaps)),
         // )
         .map(makeExampleMapper(IOS && this.state.useGoogleMaps)),
-    );
+    );*/
   }
 }
 

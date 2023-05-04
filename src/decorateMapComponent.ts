@@ -178,3 +178,5 @@ type ComponentName =
   | 'Polyline'
   | 'UrlTile'
   | 'WMSTile';
+
+console.log('decorateMapComponent');

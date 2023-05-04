@@ -8,7 +8,7 @@ import {
   NativeModules,
   UIManager,
 } from 'react-native';
-import MapView, {Marker} from 'react-native-maps';
+import MapView from 'react-native-maps';
 
 const {width, height} = Dimensions.get('window');
 
@@ -17,11 +17,13 @@ const LATITUDE = 37.78825;
 const LONGITUDE = -122.4324;
 const LATITUDE_DELTA = 0.0922;
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
+
 console.log({NativeModules, UIManager});
+
 class StaticMap extends React.Component<any, any> {
   constructor(props: any) {
     super(props);
-
+    console.log('constructor');
     this.state = {
       region: {
         latitude: LATITUDE,
@@ -33,6 +35,7 @@ class StaticMap extends React.Component<any, any> {
   }
 
   render() {
+    console.log('render');
     return (
       <View style={styles.container}>
         <ScrollView
@@ -46,19 +49,8 @@ class StaticMap extends React.Component<any, any> {
           <Text>will</Text>
           <Text>cause</Text>
           <Text>the</Text>
-          <MapView
-            provider={this.props.provider}
-            style={styles.map}
-            scrollEnabled={false}
-            zoomEnabled={false}
-            pitchEnabled={false}
-            rotateEnabled={false}
-            initialRegion={this.state.region}>
-            {/* <Marker
-              title="This is a title"
-              description="This is a description"
-              coordinate={this.state.region}
-            /> */}
+          <MapView>
+            <Text>Child of Map</Text>
           </MapView>
           <Text>parent</Text>
           <Text>ScrollView</Text>
