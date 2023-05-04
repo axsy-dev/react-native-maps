@@ -4,7 +4,6 @@
 #include "NativeModules.h"
 #include "winrt/Microsoft.ReactNative.h"
 
-
 namespace winrt::ReactNativeMaps
 {
 
@@ -33,8 +32,8 @@ namespace winrt::ReactNativeMaps
     void ReactContext(React::IReactContext reactContext) noexcept;
 
     // IViewManagerWithNativeProperties
-    Collections::IMapView<winrt::hstring, React::ViewManagerPropertyType>NativeProps() noexcept;
-    void UpdateProperties(xaml::FrameworkElement const& view, React::IJSValueReader const& propertyMapReader) noexcept;
+    Collections::IMapView<winrt::hstring, React::ViewManagerPropertyType> NativeProps() noexcept;
+    void UpdateProperties(xaml::FrameworkElement const &view, React::IJSValueReader const &propertyMapReader) noexcept;
 
   private:
     winrt::Microsoft::ReactNative::ReactContext m_reactContext{nullptr};
