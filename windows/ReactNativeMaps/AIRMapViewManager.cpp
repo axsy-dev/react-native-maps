@@ -8,23 +8,14 @@ using namespace winrt;
 using namespace Microsoft::ReactNative;
 using namespace winrt::Windows::UI::Xaml::Controls;
 
-namespace winrt::ReactNativeMaps
+namespace winrt::ReactNativeMaps::implementation
 {
-
-    // AIRMapViewManager::AIRMapViewManager() {}
-
     // IViewManager
     winrt::hstring AIRMapViewManager::Name() noexcept { return L"AIRMap"; }
 
     xaml::FrameworkElement AIRMapViewManager::CreateView() noexcept
     {
-        auto const &view = Maps::MapControl();
-
-        // view.ZoomLevel(12);
-        // view.Style(Maps::MapStyle::Road);
-        // view.MapProjection(Maps::MapProjection::WebMercator);
-
-        return view;
+        return Maps::MapControl();
     }
 
     // IViewManagerWithChildren

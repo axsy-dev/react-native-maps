@@ -67,6 +67,7 @@ export const MAP_TYPES: MapTypes = {
   MUTEDSTANDARD: 'mutedStandard',
 };
 
+console.log('MapView loaded');
 const GOOGLE_MAPS_ONLY_TYPES: MapType[] = [MAP_TYPES.TERRAIN, MAP_TYPES.NONE];
 
 export type MapViewProps = ViewProps & {

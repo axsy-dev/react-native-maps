@@ -4,16 +4,17 @@
 #include "NativeModules.h"
 #include "winrt/Microsoft.ReactNative.h"
 
-namespace winrt::ReactNativeMaps
+namespace winrt::ReactNativeMaps::implementation
 {
 
-  class AIRMapViewManager : public winrt::implements<AIRMapViewManager, React::IViewManager,
-                                                     React::IViewManagerWithChildren,
-                                                     React::IViewManagerWithReactContext,
-                                                     React::IViewManagerWithNativeProperties>
+  struct AIRMapViewManager : winrt::implements<AIRMapViewManager,
+                                               React::IViewManager,
+                                               React::IViewManagerWithChildren,
+                                               React::IViewManagerWithReactContext,
+                                               React::IViewManagerWithNativeProperties>
   {
   public:
-    // AIRMapViewManager();
+    AIRMapViewManager() = default;
 
     // IViewManager
     winrt::hstring Name() noexcept;

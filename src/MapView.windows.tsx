@@ -1,18 +1,16 @@
 import React from 'react';
-import {View, Text, requireNativeComponent} from 'react-native';
+import {requireNativeComponent} from 'react-native';
 
 const AIRMap = requireNativeComponent('AIRMap');
+console.log({AIRMap});
 
-class MapView extends React.Component {
-  render() {
-    return (
-      <View>
-        <AIRMap>
-          <Text>here</Text>
-        </AIRMap>
-      </View>
-    );
-  }
+if (!AIRMap) {
+  console.warn('No AIRMap');
 }
 
-export default MapView;
+console.log('MapView.windows loaded');
+
+export default function MapView() {
+  console.log('Windows MapView');
+  return <AIRMap />;
+}

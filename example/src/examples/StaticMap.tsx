@@ -49,9 +49,8 @@ class StaticMap extends React.Component<any, any> {
           <Text>will</Text>
           <Text>cause</Text>
           <Text>the</Text>
-          <MapView>
-            <Text>Child of Map</Text>
-          </MapView>
+          <MapView />
+
           <Text>parent</Text>
           <Text>ScrollView</Text>
           <Text>to</Text>
