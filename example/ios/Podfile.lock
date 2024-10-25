@@ -1418,9 +1418,9 @@ SPEC CHECKSUMS:
   React-perflogger: 3d31e0d1e8ad891e43a09ac70b7b17a79773003a
   React-RCTActionSheet: c4a3a134f3434c9d7b0c1054f1a8cfed30c7a093
   React-RCTAnimation: 0e5d15320eeece667fcceb6c785acf9a184e9da1
-  React-RCTAppDelegate: 3ab57e497300ec1c54b798ba2d0834ee048229f4
+  React-RCTAppDelegate: c4f6c0700b8950a8b18c2e004996eec1807d430a
   React-RCTBlob: c46aaaee693d371a1c7cae2a8c8ee2aa7fbc1adb
-  React-RCTFabric: 82f15dc5a981288bfa806545f943cbd18e794ad7
+  React-RCTFabric: 0dbf28ce96c7f2843483e32a725a5b5793584ff3
   React-RCTImage: a04dba5fcc823244f5822192c130ecf09623a57f
   React-RCTLinking: 533bf13c745fcb2a0c14e0e49fd149586a7f0d14
   React-RCTNetwork: a29e371e0d363d7b4c10ab907bc4d6ae610541e9
@@ -1441,4 +1441,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 4d714dbfbb00725b20fbd28d6ba7723bcd8914af
 
-COCOAPODS: 1.14.3
+COCOAPODS: 1.15.2
